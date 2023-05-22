@@ -1,8 +1,25 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-int a;
-int b;
-a=10;
-b=a;
-Console.WriteLine("el valor de a es: "+a);
-Console.WriteLine("el valor de b es: "+b);
+﻿int x;
+int z;
+int r;
+double c=0;
+string y;
+Console.WriteLine("ingrese un numero");
+bool control=int.TryParse(Console.ReadLine(), out x);
+if (control && x>0)
+{
+    y=Convert.ToString(x);
+    Console.WriteLine(y);
+    z=y.Length;
+    while (x>=10)
+    {
+        r=x%10;
+        c=c+(r*Math.Pow(10, z-1));
+        x=x/10;
+        z=z-1;
+    }
+    if (x<10)
+    {
+        c=c+x;
+    }
+    Console.WriteLine(c);
+}
